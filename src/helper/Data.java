@@ -4,7 +4,7 @@ import error.EmptyList;
 import error.ListLimit;
 
 public class Data {
-    public static int MAXIMUM_LENGTH = 10; //change this
+    public static final int MAXIMUM_LENGTH = 10; //change this
     public int[] list;
 
     public Data() {
@@ -24,14 +24,14 @@ public class Data {
         quickSort(list, 0, list.length - 1);
     }
 
-    private void swap(int i, int j){
+    private void swap(int i, int j) {
         int temp = list[i];
         list[i] = list[j];
         list[j] = temp;
     }
 
-    private void quickSort(int[] array, int left, int right){
-        if (left < right){
+    private void quickSort(int[] array, int left, int right) {
+        if (left < right) {
             int pivotIndex = partition(array, left, right);
             quickSort(array, left, pivotIndex - 1);
             quickSort(array, pivotIndex + 1, right);
@@ -42,7 +42,7 @@ public class Data {
         int pivot = array[left];
         int numberFromLeft = left;
 
-        for (int i = left + 1; i <= right; i++){
+        for (int i = left + 1; i <= right; i++) {
             if (array[i] > pivot) {
                 numberFromLeft++;
                 swap(i, numberFromLeft);
