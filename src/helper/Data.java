@@ -33,7 +33,7 @@ public class Data {
     private void quickSort(int[] array, int left, int right){
         if (left < right){
             int pivotIndex = partition(array, left, right);
-            quickSort(array, left, pivotIndex);
+            quickSort(array, left, pivotIndex - 1);
             quickSort(array, pivotIndex + 1, right);
         }
     }
